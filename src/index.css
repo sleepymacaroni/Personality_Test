@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #ffffff;
+  color: #5c38b7;
+}
+
+/* ROOT LAYOUT */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 12px;
+  color: #5c38b7;
+}
+
+.navbar button:hover {
+  border-bottom: 2px solid #5c38b7;
+}
+
+/* PAGE CONTENT */
+.page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* HEADINGS */
+h1, h2 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* OPTIONAL: cleaner text */
+p {
+  margin-top: 10px;
+}
