@@ -52,7 +52,27 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-/* OPTIONAL: cleaner text */
+/* cleaner text */
 p {
   margin-top: 10px;
+}
+
+/* METHODOLOGY PAGE */
+.methodology-content {
+  text-align: left;
+  max-width: 750px;
+  margin: 40px auto;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+.methodology-title {
+  text-align: center;
+}
+
+.methodology-image {
+  display: block;
+  margin: 30px auto;
+  max-width: 100%;
+  height: auto;
 }
