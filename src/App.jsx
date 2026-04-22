@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Methodology from "./Methodology";
+import About from "./About";
 
 export default function App() {
   const [page, setPage] = useState("quiz");
@@ -8,7 +9,7 @@ export default function App() {
     if (page === "quiz") return <h2>Take the Quiz</h2>;
     if (page === "methods") return <Methodology />;
     if (page === "results") return <h2>Interpreting Results</h2>;
-    if (page === "about") return <h2>About the Quiz</h2>;
+    if (page === "about") return <About />;
   };
 
   return (

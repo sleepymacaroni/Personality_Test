@@ -1,8 +1,8 @@
 import personalityMap from "./assets/personality-map.png";
 export default function Methodology() {
   return (
-    <div className="methodology-content">
-      <h1 className="methodology-title">Methods</h1>
+    <div className="page">
+      <h1 className="page-title">Methods</h1>
 
       <p>
         The test is composed of first-person (“I”) statements about the self, which participants evaluate based on how strongly they relate to each one using a five-point Likert scale: strongly disagree, disagree, neutral, agree, and strongly agree. Each statement is designed to correspond to a specific core trait, contributing to an overall assessment of personality structure.

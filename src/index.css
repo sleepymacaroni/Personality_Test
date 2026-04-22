@@ -10,12 +10,16 @@ body {
   color: #5c38b7;
 }
 
+
+
 /* ROOT LAYOUT */
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
+
 
 /* NAVBAR */
 .navbar {
@@ -40,11 +44,7 @@ body {
   border-bottom: 2px solid #5c38b7;
 }
 
-/* PAGE CONTENT */
-.page {
-  padding: 60px 20px;
-  text-align: center;
-}
+
 
 /* HEADINGS */
 h1, h2 {
@@ -52,27 +52,46 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
+
 /* cleaner text */
 p {
   margin-top: 10px;
 }
 
-/* METHODOLOGY PAGE */
-.methodology-content {
+
+
+/* for all pages */
+.page {
   text-align: left;
-  max-width: 750px;
-  margin: 40px auto;
+  max-width: 900px;
+  margin: auto;
   line-height: 1.6;
   padding: 0 20px;
 }
 
-.methodology-title {
+.page-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
+
+
+/* for Methodology page specifically */
 .methodology-image {
   display: block;
   margin: 30px auto;
   max-width: 100%;
   height: auto;
+}
+
+
+
+/* for About page specifically */
+.about-content {
+  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  line-height: 1.6;
+  padding: 0 20px;
 }
