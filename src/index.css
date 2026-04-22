@@ -105,3 +105,54 @@ p {
   line-height: 1.6;
   padding: 0 20px;
 }
+
+
+
+/* for Quiz page specifically */
+.question-row {
+  margin-bottom: 25px;
+}
+
+.question-text {
+  margin-bottom: 10px;
+}
+
+.options-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.option-button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.option-button:hover {
+  background: #f0f0f0;
+}
+
+.option-button.selected {
+  background: #ab7de3;
+  color: white;
+  border-color: #ab7de3;
+}
+
+.submit-button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: none;
+  background: #5c38b7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.unanswered {
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 8px;
+}
