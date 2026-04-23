@@ -115,12 +115,14 @@ p {
 
 .question-text {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .options-row {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .option-button {
@@ -143,6 +145,8 @@ p {
 
 .submit-button {
   margin-top: 30px;
+  margin-left: 350px;
+  margin-bottom: 100px;
   padding: 12px 20px;
   border: none;
   background: #5c38b7;
@@ -155,4 +159,35 @@ p {
   border: 2px solid red;
   padding: 10px;
   border-radius: 8px;
+}
+
+.results-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.results-title {
+  margin-bottom: 20px;
+}
+
+.map-wrapper {
+  position: relative;
+  width: 700px;
+  max-width: 90vw;
+}
+
+.dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: #891fd4;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #b01fd4;
+}
+
+.coords {
+  margin-top: 15px;
 }

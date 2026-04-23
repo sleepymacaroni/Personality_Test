@@ -1,3 +1,4 @@
+import personalityMap from "./assets/personality-map-standard.png";
 import { useState } from "react";
 
 const questions = [
@@ -75,11 +76,6 @@ const questions = [
     text: "When I don’t understand something, I attempt to figure it out myself first before consulting others.",
     axis: "y",
     direction: 1 // initiative
-  },
-  {
-    text: "I feel fine not always being in control of outcomes.",
-    axis: "y",
-    direction: -1 // complacence
   },
   {
     text: "I like having clear systems and rules to follow.",
@@ -216,17 +212,82 @@ const options = [
   { label: "Strongly Agree", value: 2 }
 ];
 
+const types = [
+  { name: "The Bull", x: -35, y: 35 },
+  { name: "The Cheetah", x: 0, y: 25 },
+  { name: "The Butterfly", x: 35, y: 35 },
+  { name: "The Beaver", x: -15, y: 15 },
+  { name: "The Kite", x: 15, y: 15},
+  { name: "The Stone", x: 0, y: 0},
+  { name: "The Cookie Cutter", x: -25, y: 0},
+  { name: "The Mirror", x: 25, y: 0},
+  { name: "The Jellyfish", x: -15, y: -15},
+  { name: "The Elephant", x: 15, y: -15},
+  { name: "The Kelp", x: -35, y: -35},
+  { name: "The Acrobat", x: 35, y: -35},
+  { name: "The Heron", x: 0, y: -25}
+];
+
 export default function Quiz() {
-  const [answers, setAnswers] = useState(Array(questions.length).fill(null));
-  const [submitted, setSubmitted] = useState(false);
+  const [answers, setAnswers] = useState(
+    Array(questions.length).fill(null)
+  );
+  const [submitted, setSubmitted] = useState(null);
   const [attemptedSubmit, setAttemptedSubmit] = useState(false);
 
-  const handleSelect = (qIndex, value) => {
-    const newAnswers = [...answers];
-    newAnswers[qIndex] = value;
-    setAnswers(newAnswers);
+  // scaling for map coordinate system
+  const scale = 40;
+
+  const toPercent = (value) => {
+    return ((value + scale) / (2 * scale)) * 100;
   };
 
+  const calculateResults = () => {
+    let x = 0;
+    let y = 0;
+
+    answers.forEach((value, i) => {
+      const q = questions[i];
+
+      if (q.axis === "x") {
+        x += value * q.direction;
+      } else if (q.axis === "y") {
+        y += value * q.direction;
+      }
+    });
+
+    return {
+      x, y
+    };
+  };
+
+const getClosestType = (x, y) => {
+  let closest = null;
+  let smallestDistance = Infinity;
+
+  types.forEach((type) => {
+    const dx = x - type.x;
+    const dy = y - type.y;
+
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance < smallestDistance) {
+      smallestDistance = distance;
+      closest = type;
+    }
+  });
+
+  return closest;
+};
+
+  // answer selection
+  const handleSelect = (qIndex, value) => {
+    const updated = [...answers];
+    updated[qIndex] = value;
+    setAnswers(updated);
+  };
+
+  // submit logic
   const handleSubmit = () => {
     setAttemptedSubmit(true);
 
@@ -235,37 +296,61 @@ export default function Quiz() {
     if (firstMissing !== -1) {
       alert("You didn’t answer all the questions.");
 
-      const element = document.getElementById(`question-${firstMissing}`);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      const el = document.getElementById(`question-${firstMissing}`);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
       }
 
       return;
     }
 
-    console.log("Answers:", answers);
-    setSubmitted(true);
+    const result = calculateResults();
+    setSubmitted(result);
   };
 
+  // RESULTS SCREEN
   if (submitted) {
-    return (
-      <div className="quiz-content">
-        <h1>Results</h1>
-        <p>We'll calculate your personality here...</p>
-      </div>
-    );
-  }
+    const closestType = getClosestType(submitted.x, submitted.y);
+  return (
+    <div className="results-page">
+      <h1 className="results-title">Results</h1>
 
+      <div className="map-wrapper">
+        <img
+          src={personalityMap}
+          alt="Personality map"
+          className="methodology-image"
+        />
+
+        <div
+          className="dot"
+          style={{
+            left: `${toPercent(submitted.x)}%`,
+            top: `${100 - toPercent(submitted.y)}%`
+          }}
+        />
+      </div>
+
+      <p className="result-type">
+        You are: <strong>{closestType.name}</strong>
+      </p>
+    </div>
+  );
+}
+
+  // QUIZ SCREEN
   return (
     <div className="quiz-content">
-      <h1 className="quiz-title">Personality Quiz</h1>
+      <h1 className="page-title">Personality Quiz</h1>
 
       {questions.map((question, qIndex) => (
         <div
           id={`question-${qIndex}`}
           key={qIndex}
           className={`question-row ${
-            attemptedSubmit && answers[qIndex] === null ? "unanswered" : ""
+            attemptedSubmit && answers[qIndex] === null
+              ? "unanswered"
+              : ""
           }`}
         >
           <p className="question-text">{question.text}</p>
@@ -289,10 +374,6 @@ export default function Quiz() {
       <button className="submit-button" onClick={handleSubmit}>
         See Results
       </button>
-
-      <p className="extra-space">
-         
-      </p>
     </div>
   );
 }
