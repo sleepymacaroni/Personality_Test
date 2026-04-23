@@ -4,7 +4,7 @@ export default function About() {
         <h1 className="page-title">Interpreting Your Results</h1>
         
         <p className="extra-space">
-            A person is assigned a specific personality type based on their unique combination of initiative versus complacence and practicality versus emotionality. There are 13 different personality types, each listed below along with a short description. After completing the quiz, a more comprehensive look at your specific personality type will be provided.
+            A person is assigned a specific personality type based on their unique combination of initiative versus complacence and practicality versus emotionality. There are 13 different personality types, each listed below along with a short description. After completing the quiz, a more comprehensive look at your specific combination of traits will be provided.
         </p>
         
         <h1 className="secondary-title">Personality Types</h1>

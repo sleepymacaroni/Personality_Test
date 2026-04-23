@@ -313,7 +313,11 @@ const getClosestType = (x, y) => {
     const closestType = getClosestType(submitted.x, submitted.y);
   return (
     <div className="results-page">
-      <h1 className="results-title">Results</h1>
+      <h1 className="page-title">Results</h1>
+
+      <p className="result-type">
+        You are: <strong>{closestType.name}</strong>
+      </p>
 
       <div className="map-wrapper">
         <img
@@ -330,10 +334,6 @@ const getClosestType = (x, y) => {
           }}
         />
       </div>
-
-      <p className="result-type">
-        You are: <strong>{closestType.name}</strong>
-      </p>
     </div>
   );
 }

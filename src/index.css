@@ -168,14 +168,11 @@ p {
   padding-top: 40px;
 }
 
-.results-title {
-  margin-bottom: 20px;
-}
-
 .map-wrapper {
   position: relative;
   width: 700px;
   max-width: 90vw;
+  overflow: visible;
 }
 
 .dot {
@@ -190,4 +187,8 @@ p {
 
 .coords {
   margin-top: 15px;
+}
+
+.result-type {
+  margin-bottom: 30px;
 }
