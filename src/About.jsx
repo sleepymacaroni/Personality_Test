@@ -4,7 +4,15 @@ export default function About() {
       <h1 className="page-title">About</h1>
 
       <p>
-        Created by Sasha Weingarten and Joseph Frayman.
+        Personality philosophy created by Joseph Frayman and Sasha Weingarten.
+      </p>
+
+      <p>
+        Website and personality quiz created by Sasha Weingarten.
+      </p>
+
+      <p>
+        &lt;3
       </p>
 
     </div>
