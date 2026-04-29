@@ -192,3 +192,36 @@ p {
 .result-type {
   margin-bottom: 30px;
 }
+
+.login-page {
+  text-align: center;
+  padding-top: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-form input {
+  width: 300px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-form button {
+  padding: 12px 20px;
+  border: none;
+  background: #5c38b7;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.retake-button {
+  margin-left: 0;
+}

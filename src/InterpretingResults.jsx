@@ -82,7 +82,7 @@ export default function About() {
         <h2>The Mirror</h2>
 
         <p>
-            The Functions of Emotional Reflection and Internal Processing—The potential for deep emotional awareness, intuitive understanding of others, and adaptable social presence. The Mirror engages with the world through feeling, often absorbing emotional nuance while processing it internally rather than immediately externalizing it. They are socially flexible and capable of fitting into different environments when needed, but their sense of self is not dependent on external validation or approval. Much of their emotional life is worked through in private reflection, allowing them to remain composed and intentional in how they express themselves outwardly. Their strength lies in their clarity of reflection—the ability to understand both themselves and others without becoming defined by either.
+            The potential for deep emotional awareness, intuitive understanding of others, and adaptable social presence. The Mirror engages with the world through feeling, often absorbing emotional nuance while processing it internally rather than immediately externalizing it. They are socially flexible and capable of fitting into different environments when needed, but their sense of self is not dependent on external validation or approval. Much of their emotional life is worked through in private reflection, allowing them to remain composed and intentional in how they express themselves outwardly. Their strength lies in their clarity of reflection—the ability to understand both themselves and others without becoming defined by either.
         </p>
 
         <p>
